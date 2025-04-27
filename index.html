@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Saul Bass</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+  window.onload = function() {
+    var banner = document.getElementById('bannerImg');
+    var pics = ['images/saul-banner-1.jpg', 'images/saul-banner-2.jpg'];
+    var n = 0;
+    setInterval(function() {
+      n = n + 1;
+      if (n >= pics.length) {
+        n = 0;
+      }
+      banner.src = pics[n];
+    }, 7000);
+
+    var carousels = document.querySelectorAll('.carousel');
+    carousels.forEach(function(c) {
+      var items = c.querySelectorAll('.carousel-item');
+      var track = c.querySelector('.carousel-track');
+      var next = c.querySelector('.next');
+      var prev = c.querySelector('.prev');
+      var i = 0;
+
+      next.onclick = function() {
+        i = (i + 1) % items.length * 100;
+        track.style.transform = 'translateX(-' + i + '%)';
+      };
+
+      prev.onclick = function() {
+        i = (i - 1 + items.length) % items.length;
+        track.style.transform = 'translateX(-' + i+ '%)';
+      };
+    });
+  };
+</script>
+
+<body>
+  <header class="banner">
+    <img src="images/saul-banner-1.jpg" alt="Saul Bass" class="banner-img" id="bannerImg">
+    <h1>SAUL BASS</h1>
+  </header>
+
+  <main class="content">
+
+    <h2>INTRO</h2>
+
+    <section class="intro">
+      <img src="images/saul-working.jpg" alt="Saul Bass at work">
+      <p>Saul Bass was a groundbreaking American graphic designer and filmmaker, best known for transforming how audiences experience movies and brands. He’s famous for creating bold, minimalist movie posters and title sequences that told a story before the film even began. His iconic designs broke away from traditional realism, using abstract shapes and strong symbolism to capture deeper meaning. He helped define modern graphic design and is still a major influence.</p>
+    </section>
+
+    <section class="bio">
+      <img src="images/saul-meeting.jpg" alt="Saul in a meeting">
+      <p>Born in New York City in 1920, Saul Bass studied at the Art Students League and later moved to Los Angeles to pursue his design career. He collaborated with legendary filmmakers like Alfred Hitchcock, Otto Preminger, and Martin Scorsese. Outside of film, he designed logos for major brands such as AT&T, United Airlines, Quaker Oats, and the Girl Scouts of the USA—many of which are still in use today.</p>
+    </section>
+
+    <section class="designs">
+      <img src="images/saul-collage.jpg" alt="Posters collage">
+      <p>Bass was known for his use of simple shapes, limited colour palettes, and hand-cut typography. Instead of flashy visuals, he focused on strong visual metaphors. Some of his most iconic works include the spiralling title sequence for Vertigo, the jagged arm in The Man with the Golden Arm, and the stark lettering of Psycho. His style was bold and timeless—making him a true pioneer of visual storytelling.</p>
+    </section>
+
+    <h2>ICONIC POSTERS</h2>
+    <section class="carousel">
+      <div class="carousel-track">
+        <div class="carousel-item">
+          <img src="images/rocky.jpg" alt="Rocky Poster">
+          <div class="carousel-text">
+            <h3>Rocky</h3>
+            <p>Saul Bass’s Rocky poster uses a bold, minimal design to capture the film’s emotional core. With a black background and a simple white silhouette, Bass emphasizes strength, love, and the underdog spirit. The design’s simplicity is powerful and memorable, expressing deep meaning with just a few elements.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/anatomy-of-a-murder.jpg" alt="Anatomy of a Murder">
+          <div class="carousel-text">
+            <h3>Anatomy of a Murder</h3>
+            The Anatomy of a Murder poster uses bold, minimal shapes and a limited colour palette to create a striking, emotional impact. The broken, abstract figure hints at the film’s themes of crime and psychological tension. Hand-drawn typography adds a raw, human feel, making the design feel intense and personal.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/vertigo.webp" alt="Vertigo">
+          <div class="carousel-text">
+            <h3>Vertigo</h3>
+            <p>For the Vertigo poster, Saul Bass focused on capturing the film’s psychological themes through simple, symbolic visuals. Working closely with Hitchcock, he created a swirling spiral to represent disorientation and obsession. His process emphasized minimalism, using bold shapes and limited colours to express complex emotions with clarity and impact.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn prev">❮</button>
+      <button class="carousel-btn next">❯</button>
+    </section>
+
+    <h2>BRANDS</h2>
+    <section class="carousel">
+      <div class="carousel-track">
+        <div class="carousel-item">
+          <img src="images/att.jpg" alt="AT&T">
+          <div class="carousel-text">
+            <h3>AT&T</h3>
+            <p>Saul Bass played a key role in the development of the first Bell logo used by AT&T in 1969. This design featured a traditional bell symbol, enclosed in a simple circle. Later, the look was updated to reflect a more contemporary and professional identity when Bass introduced the globe logo to signify innovation and global reach.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/united.jpg" alt="United Airlines">
+          <div class="carousel-text">
+            <h3>United Airlines</h3>
+            <p>The 1974 United Airlines logo designed by Bass introduced the iconic red, white, and blue "tulip" symbol by combining a stylized "U" and "A" into one unified shape. The design reflected motion, modernity, and national identity, aligning with the airline’s image as a forward-looking American carrier.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="images/kleenex-logo.png" alt="kleenex logo">
+          <div class="carousel-text">
+            <h3>Kleenex</h3>
+            <p>Saul Bass’s Kleenex design used bold, geometric patterns and bright colours to transform simple packaging into eye-catching art. It reflected his belief that good design should be both functional and beautiful. His work helped set a new standard for product packaging, influencing how everyday items could be designed with style and personality in mind.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-btn prev">❮</button>
+      <button class="carousel-btn next">❯</button>
+    </section>
+
+  </main>
+</body>
+
+</html>

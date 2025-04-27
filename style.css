@@ -1,0 +1,159 @@
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    color: #111;
+}
+
+.banner {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    height: 500px;
+  }
+
+.banner-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.banner::before, .banner::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.banner::before {
+    top: 0;
+    height: 50%;
+    background: linear-gradient(to bottom, black, transparent);
+}
+
+.banner::after {
+    bottom: 0;
+    height: 50%;
+    background: linear-gradient(to top, black, transparent);
+}
+
+.banner h1 {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 7em;
+    font-weight: bold;
+    z-index: 3;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3em 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2em;
+    margin-bottom: 6em;
+    width: 100%;
+    max-width: 900px;
+}
+
+.content img {
+    width: 40%;
+    height: auto;
+}
+
+.content p {
+    text-align: left;
+    font-size: 1.1em;
+    max-width: 300px;
+    margin: 0;
+    line-height: 1.2;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 4em;
+    text-decoration: underline;
+}
+
+h3 {
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    overflow: hidden;
+    margin-bottom: 4em;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+}
+
+.carousel-item {
+    width: 100%;
+    height: 450px;
+    min-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    padding: 2em;
+    background: rgba(24, 17, 38, 0.75);
+}
+
+.carousel-item img {
+    max-width: 300px;
+    height: 380px;
+    padding: 2em;
+}
+
+.carousel-text {
+    background: #d8d8d8;
+    padding: 1.5em;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2em;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
